@@ -1,9 +1,10 @@
 
 <div class="container-fluid"><br>
- <center style="font-size:20px">กลุ่มการเรียนที่เกี่ยวข้อง</p>
-<?php //var_dump($head);
+  <center style="font-size:18px;"><?php //var_dump($head);
   echo $head[0]->d_name;
-?>
+?></center>
+ <center style="font-size:18px">กลุ่มการเรียนที่เกี่ยวข้อง</p>
+
   </center>
 
        <h2 style="float:left;font-size:16px">พบ <strong><?=$num;?> </strong>กลุ่ม  </h2><p>

@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-    <?php $i=0; foreach($row as $sh){$i++; ?>
+    <?php if($num==0){echo "<center>ไม่พบข้อมูล</center>";}else{ $i=0; foreach($row as $sh){$i++; ?>
     
       <tr>
         <td><?=$i;?></td>
@@ -26,7 +26,7 @@
         <td><?=$sh['us_name'];?></td>
         <td><?=$sh['us_lname'];?></td>
 
-        <td><center><?=anchor ('ctrl_admin/select_where/pk_dep/d_id/'.$sh['us_id'],"<button class='btn btn-info'><i class='fas fa-book'></i></button>");?></td>
+        <td><center><?=anchor ('ctrl_admin/join_pk_std_class_dep_where/'.$sh['us_id'].'/'.$sh['d_id'],"<button class='btn btn-info'><i class='fas fa-book'></i></button>");?></td>
         <td><center><?=anchor ('ctrl_admin/del_std/pk_users_std/us_id/'.$sh['us_id'],"<button class='btn btn-danger'><i class='far fa-trash-alt'></i></button>",array("onclick"=>"return confirm('ยืนยันการลบ?');"));?></td>
 
         <!--
@@ -36,7 +36,7 @@
                   echo $ad_status;?></td>-->
       </tr>
     
-    <?php } ?>
+    <?php } }?>
     </tbody>
   </table>
 </div>

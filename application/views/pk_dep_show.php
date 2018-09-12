@@ -10,6 +10,9 @@
 
   <div class="tab-content">
     <div id="general" class="container tab-pane active"><br>
+      <div class="row">
+   <div class="col-sm-2"></div>
+    <div class="col-sm-8 box_shadows box_content"><p>
       <h3>ข้อมูลทั่วไป</h3>
        <?=form_open("ctrl_admin/edit_dep",array("class"=>"form-horizontal")); ?>
       <?php foreach ($row as $sh) {?>
@@ -40,6 +43,7 @@
       <?php } ?>
       <?=form_close();?>
     </div>
+  </p></div></div>
   </div>
 
 

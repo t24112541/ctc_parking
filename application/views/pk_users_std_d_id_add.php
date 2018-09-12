@@ -30,11 +30,12 @@
     <div class="col-sm-2"></div>
     <div class="col-sm-8 box_shadows box_content">
       <?php  if(isset($error)) { echo $error; }; ?>
-      <?=form_open("ctrl_admin/add_class_process",array("class"=>"form-horizontal")); ?><p>
+      <?=form_open("ctrl_admin/pk_users_std_d_id",array("class"=>"form-horizontal")); ?><p>
         <h4 align="center">ข้อมูลนักเรียน / นักศึกษา</h4></p>
          <div class="form-group">
             <?php echo form_error('d_code'); ?>
             <div class="col-sm-12">
+              <input type="hidden" name="step_2">
                <select class="form-control" name="d_id" id="d_id">
                 <option value="">---------- เลือกแผนก ----------</option>
                 <?php $que=mysqli_query($conn,"select * from pk_dep");while($sh=mysqli_fetch_Array($que)){ ?>
@@ -45,8 +46,8 @@
           </div>
 
           <div class="form-group">        
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-success" name="btn_add">บันทึก</button>
+            <div class="col-sm-offset-2 col-sm-12">
+              <center><button type="submit" class="btn btn-success" name="btn_add">ถัดไป</button>
             </div>
           </div>
       <?=form_close();?>

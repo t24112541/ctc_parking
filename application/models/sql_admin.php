@@ -132,7 +132,7 @@ class Sql_admin extends CI_Model
         }else{return false;}
     }
     // test join
-    function join_sh_all($tb_join,$f_join,$f_join_order){
+    function join_sh_all($tb_join,$f_join){
         $query=$this->db->query("select * from $tb_join where $f_join ");
         if ($query->num_rows()!=0){
             $row=$query->result_array();
@@ -141,6 +141,20 @@ class Sql_admin extends CI_Model
     }
     function join_pk_class_pk_dep_id_cid($id){
         $query=$this->db->query("select * from pk_dep,pk_class where pk_dep.d_id=pk_class.d_id && pk_class.c_id=$id order by pk_class.c_id desc");
+        if ($query->num_rows()!=0){
+            $row=$query->result_array();
+            return $row;
+        }else{return false;}
+    }
+    function select_free($select,$table,$where){
+        $query=$this->db->query("select $select from $table where $where");
+        if ($query->num_rows()!=0){
+            $row=$query->result();
+            return $row;
+        }else{return false;}
+    }
+    function select_free_array($select,$table,$where){
+        $query=$this->db->query("select $select from $table where $where");
         if ($query->num_rows()!=0){
             $row=$query->result_array();
             return $row;

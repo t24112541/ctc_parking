@@ -9,6 +9,9 @@
 </ul>
 
   <div class="tab-content">
+    <div class="row">
+   <div class="col-sm-2"></div>
+    <div class="col-sm-8 box_shadows box_content"><p>
     <div id="general" class="container tab-pane active"><br>
       <h3>ข้อมูลทั่วไป</h3>
       <?php if(isset($error)) { echo $error; };?>
@@ -21,20 +24,20 @@
           </div>
 
             <div class="col-sm-12">
-              <label class="control-label col-sm-4" for="c_code">รหัสกลุ่มการเรียน: <?=$sh['c_code'];?></label>
+              <label class="control-label col-sm-12" for="c_code">รหัสกลุ่มการเรียน: <?=$sh['c_code'];?></label>
             </div>
             <div class="col-sm-5">
-              <label class="control-label col-sm-4" for="c_name">ชื่อกลุ่มการเรียน:</label>
+              <label class="control-label col-sm-12" for="c_name">ชื่อกลุ่มการเรียน:</label>
             </div>
-            <div class="col-sm-7">
-              <input type="text" class="form-control" id="c_name" name="c_name" value="<?=$sh['c_name'];?>">
+            <div class="col-sm-12">
+              <center><input type="text" class="form-control" id="c_name" name="c_name" value="<?=$sh['c_name'];?>">
             </div>
 
         </div>
 
         <div class="form-group" style="text-align: center"> 
-          <div class="col-sm-offset-2 col-sm-6">
-            <button style="margin-right:10%" type="submit" class="btn btn-success"><i class="far fa-save fa-2x"></i></button>
+          <div class="col-sm-offset-2 col-sm-12">
+            <center><button style="margin-right:10%" type="submit" class="btn btn-success"><i class="far fa-save fa-2x"></i></button>
             <?=anchor ('ctrl_admin/join_pk_class_pk_dep/pk_class/d_id/'.$sh['d_id'],"<button class='btn btn-default' type='button'><i class='far fa-times-circle fa-2x'></i></button>");?>
           </div>
           <div class="col-sm-offset-2 col-sm-6">
@@ -45,6 +48,7 @@
       <?php } ?>
       <?=form_close();?>
     </div>
+  </p></div></div>
   </div>
 
 
